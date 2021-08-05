@@ -63,10 +63,9 @@ Step 8: Restore velero backup to the cluster:
 ```
 velero get restore
 velero restore create firstbackup-restore1 --from-backup firstbackup
-velero get restore
 kubectl get restore -n velero
 velero restore describe firstbackup-restore1
-velero restore delete firstbackup-restore -  not deleting from GUI
+velero restore delete firstbackup-restore1
 velero backup delete firstbackup
 ```
 Step 9: Backup schedule using velero:
