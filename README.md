@@ -11,7 +11,7 @@ Step 2: Download the minio library and change the permissiona and run the minio 
 ```
 wget https://dl.minio.io/server/minio/release/linux-amd64/minio
 chmod +x minio
-sudo ./minio server /minio>
+sudo ./minio server /minio
 ```
 Step 3: Download Velero 1.6.2 latest release
 ```
