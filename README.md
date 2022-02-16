@@ -29,6 +29,12 @@ aws_secret_access_key=minioadmin
 EOF
 ```
 Step 5: Install Velero in the Kubernetes Cluster
+-create a bucket in minio and enter the name in here as bucket
+get your master node ip by
+```
+kubectl get nodes -o yaml
+```
+enter the ip address as s3 address here. you can also login to minio use this address with port
 ```
 velero install \
 --provider aws \
@@ -45,6 +51,35 @@ kubectl get ns
 kubectl get all -n velero (pods should be up and running)
 kubectl get crds -n velero
 ```
+*******************************************
+Lets deploy a app with namspace, e.g : nginx
+--create namespace:
+```
+kubectl get crds -n velero
+kubectl create ns nginx-test
+kubectl get ns
+```
+Create a deployment:
+```
+kubectl create deploy nginx --image nginx --replicas=2 -n nginx-test
+```
+Check pods:
+```
+watch kubectl get pods -n nginx-test
+```
+escape terminala by ctrl+c
+
+Now create a nginx service exposed on nodeport 80
+```
+kubectl create service nodeport nginx --tcp=80:80 -n nginx-test
+
+```
+see all service with cluster ip
+```
+ kubectl get all -n nginx-test
+
+```
+***************************************
 Step 7: Steps to create a backup using velero
 ```
 velero help backup
@@ -59,6 +94,17 @@ velero backup create firstbackup (For entire cluster)
 velero backup create firstbackup --include-namespaces testing (For particular ns)
 velero backup create firstbackup --include -namespaces testing --exclude-resources pods (excluding resources from particular ns)
 ```
+e.g:
+```
+velero backup create fnginxbackup --include-namespaces nginx-test
+```
+check if backup is on progress:
+```
+velero backup logs nginxbackup
+velero backup describe nginxbackup2
+
+```
+
 Step 8: Restore velero backup to the cluster:
 ```
 velero get restore
