@@ -86,6 +86,7 @@ kubectl create service nodeport nginx --tcp=80:80 -n nginx-test
 see all service with cluster ip
 ```
  kubectl get all -n nginx-test
+ 
 
 ```
 ***************************************
@@ -117,6 +118,7 @@ velero backup describe nginxbackup2
 Now delete the namespace "nginx-test"
 ```
 kubectl delete ns nginx-test
+kubectl get all -n nginx-test
 ```
 Now perform restore of nginx-test
 **************
