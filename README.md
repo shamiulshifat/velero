@@ -148,3 +148,8 @@ velero backup create secondbackup  --include-namespaces default --ttl 2h
 velero backup describe secondbackup
 velero backup get
 ```
+***************
+See for more example and how to create pvc
+https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
+https://docs.pivotal.io/tkgi/1-13/velero-stateful-lb.html
+*************************
