@@ -60,6 +60,9 @@ kubectl get ns
 kubectl get all -n velero (pods should be up and running)
 kubectl get crds -n velero
 ```
+*************
+Notice Restic pods are not running. giving: crashbackloop. to run:
+https://mannimal.blog/2019/10/04/backing-up-your-kubernetes-applications-with-velero-v1-1/
 *******************************************
 Lets deploy a app with namspace, e.g : nginx
 --create namespace:
