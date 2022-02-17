@@ -1,6 +1,9 @@
 # Velero: README.md
 Backup and migrate Kubernetes resources
-
+*******************
+First install docker from here:
+https://docs.docker.com/engine/install/ubuntu/
+*****************
 MinIO : Object Storage for AI, Opensource, S3 compatible.
 
 Step 1: Run minio container
