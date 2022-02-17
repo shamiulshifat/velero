@@ -154,5 +154,8 @@ velero backup get
 ***************
 See for more example and how to create pvc
 https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
+*****************
 https://docs.pivotal.io/tkgi/1-13/velero-stateful-lb.html
+***************
+https://mannimal.blog/2019/10/04/backing-up-your-kubernetes-applications-with-velero-v1-1/
 *************************
