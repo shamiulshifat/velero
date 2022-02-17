@@ -10,6 +10,12 @@ Step 1: Run minio container
 ```
 sudo docker pull minio/minio
 ```
+***************
+If docker is unable to pull image from server, run:
+```
+sudo chmod 666 /var /run /docker.sock
+```
+***************
 Step 2: Download the minio library and change the permissiona and run the minio server
 ```
 wget https://dl.minio.io/server/minio/release/linux-amd64/minio
