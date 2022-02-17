@@ -113,7 +113,13 @@ velero backup logs nginxbackup
 velero backup describe nginxbackup2
 
 ```
-
+*************
+Now delete the namespace "nginx-test"
+```
+kubectl delete ns nginx-test
+```
+Now perform restore of nginx-test
+**************
 Step 8: Restore velero backup to the cluster:
 ```
 velero get restore
