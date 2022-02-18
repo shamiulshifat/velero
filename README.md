@@ -138,6 +138,15 @@ velero restore describe firstbackup-restore1
 velero restore delete firstbackup-restore1
 velero backup delete firstbackup
 ```
+After restoration, check new restored namespaces are added or not: 
+```
+kubectl get ns
+```
+then  services can be accessed from the cluster ip and port:
+``
+kubectl get service --namespace <enter namespace>
+```
+```
 Step 9: Backup schedule using velero:
 ```
 velero schedule get
