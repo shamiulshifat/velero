@@ -53,6 +53,10 @@ velero install \
 --secret-file ./minio.credentials \
 --backup-location-config region=minio,s3ForcePathStyle=true,s3Url=http://<ip-address>:9000
 ```
+I through error of some config for micork8s:
+```
+sudo microk8s kubectl config view --raw > ~/.kube/config
+```
 Step 6: Check and verify velero is up and running in velero namespace
 ```
 velero version
