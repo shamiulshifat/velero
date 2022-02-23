@@ -65,6 +65,12 @@ kubectl get all -n velero (pods should be up and running)
 kubectl get crds -n velero
 ```
 *************
+Velero uses Restic for backing up Kubernetes volumes. To let Restic know of the kubelet directory in the MicroK8s context we need to patch its daemonset manifest:
+```
+sudo microk8s kubectl -n velero patch daemonset.apps/restic --type='json' -p='[{"op": "replace", "path": "/spec/template/spec/volumes/0/hostPath/path", "value":"/var/snap/microk8s/common/var/lib/kubelet/pods"}]'
+
+```
+*************************
 Notice Restic pods are not running. giving: crashbackloop. to run:
 https://mannimal.blog/2019/10/04/backing-up-your-kubernetes-applications-with-velero-v1-1/
 *******************************************
