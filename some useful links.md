@@ -7,8 +7,6 @@ https://microk8s.io/docs/velero
 
 *********************
 
-velero with UI:
 
-https://docs.bitnami.com/tutorials/backup-restore-bitnami-deployments-velero
 
 *******
