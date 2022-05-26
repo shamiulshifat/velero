@@ -22,6 +22,7 @@ wget https://dl.minio.io/server/minio/release/linux-amd64/minio
 chmod +x minio
 sudo ./minio server /minio
 ```
+for more: https://linuxhint.com/installing_minio_ubuntu/
 Step 3: Download Velero 1.6.2 latest release
 ```
 wget https://github.com/vmware-tanzu/velero/releases/download/v1.6.2/velero-v1.6.2-linux-amd64.tar.gz
