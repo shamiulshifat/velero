@@ -22,6 +22,8 @@ wget https://dl.minio.io/server/minio/release/linux-amd64/minio
 chmod +x minio
 sudo ./minio server /minio
 ```
+fOR MINIO CLIENT : https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc
+FOR UPGRADING MINIO: https://min.io/docs/minio/linux/operations/install-deploy-manage/upgrade-minio-deployment.html
 for more: https://linuxhint.com/installing_minio_ubuntu/
 Step 3: Download Velero 1.6.2 latest release
 ```
